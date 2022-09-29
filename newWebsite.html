@@ -12,29 +12,56 @@
   </head>
   <body class="container-fluid bg-dark">
     <div class="row text-light">
-      <div class="col-md-2">
+      <div class="col-md-2 col-sm-2 sticky-top">
         <nav class="navbar text-light sticky-top">
           <ul class="navbar-nav fixed-left">
-            <li><a href="#">STOP SCROLLING</a></li>
-            <li><a href="#bottom">SKIP THE SCROLLING</a></li>
+            <li><a href="#" class="btn btn-primary w-100">STOP SCROLLING</a></li>
+            <li><a href="#bottom" class="btn btn-primary">SKIP THE SCROLLING</a></li>
+            <li>
+              <div class="collapse" id="hiddenButton">
+                <button class="btn btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#Modal1">Bonus trick</button>
+              </div>
+            </li>
+            <li>
+              <button class="btn btn-primary w-100" disabled>
+                <span class="spinner-border spinner-border-sm"></span>
+                Loading
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
-      <div class ="col-md-10">
-        <div class="container-fluid text-light">
+      <div class="modal fade text-dark" id="Modal1">
+        <div class="modal-dialog modal-small">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1>This is cool, right?</h1>
+            </div>
+            <div class="modal-body">
+              <p>I'm not crazy, right?</p>
+              <p><small>Right?</small></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class ="col-md-10 col-sm-7">
+        <div class="text-light">
           <p>Have you seen how complicated all of the classes are in bootstrap</p>
         </div>
-        <div>
+        <div class="btn-group-vertical">
           <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="I know, it is a lot for just this" data-bs-content="This isn't even all you need for it, it includes JAVASCRIPT!">The tag for this takes over 3 lines</button>
-        </div>
-        <div class="container-fluid text-light dropdown">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">This is about  1.5 line tag</button>
-          <ul class="dropdown-menu">
-            <li>AND ALL IT DOES IS THIS. THE TAGS ARE SOOOO LONG</li>
-          </ul>
-        </div>
-        <div class="container-fluid text-light">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">This is about  1.5 line tag</button>
+              <ul class="dropdown-menu">
+                <li>AND ALL IT DOES IS THIS. THE TAGS ARE SOOOO LONG</li>
+              </ul>
+          </div>
           <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Also uses JavaScript though">This is also 2 lines</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#hiddenButton">Here is a cool trick</button>
+        </div>
         <p>
           <pre>
 
@@ -718,8 +745,22 @@
 
           </pre>
         </p>
-        <div id="bottom"></div>
+        <div id="bottom">
         </div>
+      </div>
+      <div class="col-sm-3">
+        <p>This is on top only at a specific range of screen sizes :)</p>
+        <div class="offcanvas offcanvas-end bg-dark" id="Offcanvas1">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            <h1>This is kinda cool</h1>
+          </div>
+          <div class="offcanvas-body">
+            <p>Did you know that this is actually quite nice to organize, as it is seperate from the trigger? It makes it very nice to think about and work with.</p>
+            <p>Maybe this should've been used for a fancier than a few links navbar. whatever. This is cool on its own, and the navbar does stick to the top of the screen</p>
+          </div>
+        </div>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#Offcanvas1">Cool aspect of bootstrap</button>
       </div>
     </div>
 
